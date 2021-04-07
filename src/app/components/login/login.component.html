@@ -5,10 +5,10 @@
     <form>
       Email
       <br><input name="username" type="text" required
-                 [(ngModel)]="user.email"><br>
+                 [(ngModel)]="loginRequest.email"><br>
       Password
       <br><input name="password" type="password" required
-                 [(ngModel)]="user.password"><br>
+                 [(ngModel)]="loginRequest.password"><br>
       <button (click)="loginUser()">Continue</button>
       <div *ngIf="logged">
         logged

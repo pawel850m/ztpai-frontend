@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         response => {
           console.log(response);
           this.logged = true;
-          this.router.navigate(['/dashboard']);
+          this.router.navigateByUrl('/dashboard');
         },
         error => {
           console.log(error);

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { JwtInterceptor } from './interceptor/jwt-interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,11 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     FormsModule,
     NgxWebstorageModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

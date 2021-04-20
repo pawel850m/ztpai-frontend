@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
-import { User} from '../../models/user';
 import { Router } from '@angular/router';
 import {LoginRequest} from './login.request';
 
@@ -28,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.logout();
   }
   loginUser(): void {
     const data = {

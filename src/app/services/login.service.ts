@@ -5,6 +5,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { LoginRequest } from '../components/login/login.request';
 import { LoginResponse } from '../components/login/login.response';
 import {map} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 const baseUrl = 'http://localhost:8080/api/v1/auth/signin';
 
@@ -12,18 +13,21 @@ const baseUrl = 'http://localhost:8080/api/v1/auth/signin';
   providedIn: 'root'
 })
 export class LoginService {
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private httpClient: HttpClient, private localStorage: LocalStorageService) { }
 
   login(loginRequest: LoginRequest): Observable<any> {
-    return this.httpClient.post<LoginResponse>(baseUrl, loginRequest)
+    return this.httpClient.post<LoginResponse>(`${this.apiServerUrl}/api/v1/auth/login`, loginRequest)
       .pipe(map(data => {
         this.localStorage.store('JwtToken', data.token);
         return true;
       }));
   }
-
-  getJwt(){
+  logout(): void {
+    this.localStorage.clear('JwtToken');
+  }
+  getJwt(): any{
     return this.localStorage.retrieve('JwtToken');
   }
 }

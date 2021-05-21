@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Project} from '../../models/project';
 import {ProjectService} from '../../services/project.service';
-import {HttpErrorResponse} from '@angular/common/http';
-import {isEmpty} from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',

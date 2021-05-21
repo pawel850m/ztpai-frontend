@@ -112,7 +112,7 @@ export class RoleManagerComponent implements OnInit {
     button.click();
   }
 
-  enableUser(userId: number): void {
+  public enableUser(userId: number): void {
     this.userService.enableUser(userId).subscribe(
       (response: void) => {
         console.log(response);
@@ -125,7 +125,7 @@ export class RoleManagerComponent implements OnInit {
     window.location.reload();
   }
 
-  disableUser(userId: number): void {
+  public disableUser(userId: number): void {
     this.userService.disableUser(userId).subscribe(
       (response: void) => {
         console.log(response);
@@ -138,7 +138,7 @@ export class RoleManagerComponent implements OnInit {
     window.location.reload();
   }
 
-  requestAdmin(userId: number): void {
+  public requestAdmin(userId: number): void {
     this.userService.requestAdmin(userId).subscribe(
       (response: void) => {
         console.log(response);

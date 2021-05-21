@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  saveUser(): void {
+  public saveUser(): void {
     const data = {
       firstName: this.user.firstName,
       lastName: this.user.lastName,

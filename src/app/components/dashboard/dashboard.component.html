@@ -1,24 +1,17 @@
 <app-header></app-header>
 <script src="../../models/project.ts"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
-
 <div class="container p-0" id="main-dashboard-container">
 
   <form class="form-inline mt-2 mt-md-0">
     <input class="form-control mr-sm-2" (ngModelChange)="searchProjects(key.value)" #key="ngModel" ngModel name="key"
            type="text" placeholder="Search" aria-label="Search" required>
-    <!--      <button (click)="searchProjects(key.value)"  ngModel class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
   </form>
   <br>
   <a (click)="onOpenModal(null, 'add')"
      class="btn btn-secondary float-right mt-n1">New project</a>
   <h1 class="h3 mb-3">Projects</h1>
-
   <br>
-
-
-
   <div class="row">
     <div *ngFor="let project of projects" class="col-12 col-md-6 col-lg-3">
       <div class="card">
@@ -29,7 +22,6 @@
         </div>
         <div class="card-body px-4 pt-2">
           <p>{{project.description}}</p>
-          <!--          <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle mr-1" alt="Avatar" width="28" height="28">-->
         </div>
         <div class="card-body">
           <div class="float-right btn-group btn-group-sm">
@@ -45,13 +37,6 @@
     </div>
   </div>
 </div>
-
-<div class="container">
-  <div class="row">
-  </div>
-</div>
-
-<!-- Modal Add -->
 <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -77,8 +62,6 @@
     </div>
   </div>
 </div>
-
-<!-- Modal edit -->
 <div class="modal fade" id="editProjectModal" tabindex="-1" aria-labelledby="editProjectModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -108,8 +91,6 @@
     </div>
   </div>
 </div>
-
-<!-- Modal delete-->
 <div class="modal fade" id="deleteProjectModal" tabindex="-1" aria-labelledby="deleteProjectModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

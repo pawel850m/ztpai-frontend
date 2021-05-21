@@ -10,13 +10,6 @@ import {LoginRequest} from './login.request';
 })
 export class LoginComponent implements OnInit {
   loginRequest: LoginRequest;
-
-  // user: User = {
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   password: ''
-  // };
   logged = false;
 
   constructor(private loginService: LoginService, private router: Router) {
@@ -31,7 +24,6 @@ export class LoginComponent implements OnInit {
   }
   loginUser(): void {
     const data = {
-      // this.loginRequest.username = this.user.email,
       email: this.loginRequest.email,
       password: this.loginRequest.password
     };

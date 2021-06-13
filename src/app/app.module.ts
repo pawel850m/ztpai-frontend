@@ -10,9 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { JwtInterceptor } from './interceptor/jwt-interceptor';
-import { HeaderComponent } from './components/header/header.component';
-import { RoleManagerComponent } from './components/role-manager/role-manager.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import { RoleManagerComponent } from './components/role-manager/role-manager.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { TicketComponent } from './components/ticket/ticket.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    ProjectDetailsComponent,
     TicketComponent,
     RoleManagerComponent,
     HeaderComponent
@@ -29,7 +32,8 @@ import { TicketComponent } from './components/ticket/ticket.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
+import {Project} from '../models/project';
 import {HttpClient} from '@angular/common/http';
 import {Ticket} from '../models/ticket';
 import {environment} from '../../environments/environment';
 import {User} from '../models/user';
+
+// const baseUrl = 'http://localhost:8080/api/v1/ticket/';
 
 @Injectable({
   providedIn: 'root'

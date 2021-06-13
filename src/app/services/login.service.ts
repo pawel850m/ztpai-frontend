@@ -7,6 +7,8 @@ import { LoginResponse } from '../components/login/login.response';
 import {map} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
 
+const baseUrl = 'http://localhost:8080/api/v1/auth/signin';
+
 @Injectable({
   providedIn: 'root'
 })

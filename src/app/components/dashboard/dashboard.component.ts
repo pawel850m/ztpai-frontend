@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Project} from '../../models/project';
 import {ProjectService} from '../../services/project.service';
-import {HttpErrorResponse} from '@angular/common/http';
-import {isEmpty} from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,7 +24,6 @@ export class DashboardComponent implements OnInit {
     this.getAll();
   }
   public getAll(): void {
-    setTimeout(() => {
       this.projectService.getAll()
         .subscribe(
           data => {
@@ -37,7 +34,6 @@ export class DashboardComponent implements OnInit {
             console.log(error);
           }
         );
-    }, 1000);
   }
   public addProject(): void {
     const data = {
@@ -128,7 +124,6 @@ export class DashboardComponent implements OnInit {
       }
     );
     this.getAll();
-    window.location.reload();
     window.location.reload();
   }
 }

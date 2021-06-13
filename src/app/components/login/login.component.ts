@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.logout();
   }
-  loginUser(): void {
+  public loginUser(): void {
     const data = {
       email: this.loginRequest.email,
       password: this.loginRequest.password
